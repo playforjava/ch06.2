@@ -8,10 +8,10 @@ import java.util.List;
 
 public class Tag {
 
-  public static List<Tag> tags = new LinkedList<>();
+  public static List<Tag> tags = new LinkedList<Tag>();
 
   static {
-    tags.add(new Tag(1L, "lightweight", Product.findByName("paperclips")));
+    tags.add(new Tag(1L, "lightweight", Product.findByName("paperclips 1")));
     tags.add(new Tag(2L, "metal", Product.findByName("paperclips")));
     tags.add(new Tag(3L, "plastic", Product.findByName("paperclips")));
   }
@@ -36,7 +36,7 @@ public class Tag {
   public Tag(Long id, String name, Collection<Product> products) {
     this.id = id;
     this.name = name;
-    this.products = new LinkedList<>(products);
+    this.products = new LinkedList<Product>(products);
     for (Product product : products) {
       product.tags.add(this);
     }
