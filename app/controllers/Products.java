@@ -11,6 +11,7 @@ import views.html.products.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@With(CatchAction.class)
 public class Products extends Controller {
 
   private static final Form<Product> productForm = Form.form(Product.class);
