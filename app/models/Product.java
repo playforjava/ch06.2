@@ -7,6 +7,7 @@ import play.mvc.PathBindable;
 import play.mvc.QueryStringBindable;
 
 import java.util.*;
+import utils.*;
 
 public class Product implements PathBindable<Product>,
     QueryStringBindable<Product> {
@@ -33,6 +34,8 @@ public class Product implements PathBindable<Product>,
   public String name;
   public String description;
   public Date date = new Date();
+  @DateFormat("yyyy-MM-dd")
+  public Date peremptionDate = new Date();
 
   public List<Tag> tags = new LinkedList<Tag>();
 

@@ -8,6 +8,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import utils.*;
 
 public class Global extends GlobalSettings {
     
@@ -38,5 +39,7 @@ public class Global extends GlobalSettings {
          }
                 
         });
+      Formatters.register(Date.class, new AnnotationDateFormatter());
+        
     }
 }
